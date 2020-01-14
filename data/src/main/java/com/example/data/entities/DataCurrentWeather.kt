@@ -1,92 +1,95 @@
 package com.example.data.entities
 import com.google.gson.annotations.SerializedName
 
-
 data class DataCurrentWeather(
+    @SerializedName("payload") val payload: List<DataCurrentWeatherPayload>? = null
+)
+
+data class DataCurrentWeatherPayload(
     @SerializedName("base")
-    val base: String,
+    val base: String? = null,
     @SerializedName("clouds")
-    val clouds: DataCurrentClouds,
+    val clouds: DataCurrentClouds? = null,
     @SerializedName("cod")
-    val cod: Int,
+    val cod: Int? = null,
     @SerializedName("coord")
-    val coord: DataCurrentCoord,
+    val coord: DataCurrentCoord? = null,
     @SerializedName("dt")
-    val dt: Int,
+    val dt: Int? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("main")
-    val main: DataCurrentMain,
+    val main: DataCurrentMain? = null,
     @SerializedName("name")
-    val name: String,
+    val name: String? = null,
     @SerializedName("sys")
-    val sys: DataCurrentSys,
+    val sys: DataCurrentSys? = null,
     @SerializedName("timezone")
-    val timezone: Int,
+    val timezone: Int? = null,
     @SerializedName("visibility")
-    val visibility: Int,
+    val visibility: Int? = null,
     @SerializedName("weather")
-    val weather: List<DataCurrentWeatherList>,
+    val weather: List<DataCurrentWeatherList>? = null,
     @SerializedName("wind")
-    val wind: DataCurrentWind
+    val wind: DataCurrentWind? = null
 )
 
 data class DataCurrentClouds(
     @SerializedName("all")
-    val all: Int
+    val all: Int? = null
 )
 
 data class DataCurrentCoord(
     @SerializedName("lat")
-    val lat: Double,
+    val lat: Double? = null,
     @SerializedName("lon")
-    val lon: Double
+    val lon: Double? = null
 )
 
 data class DataCurrentMain(
     @SerializedName("feels_like")
-    val feelsLike: Double,
+    val feelsLike: Double? = null,
     @SerializedName("humidity")
-    val humidity: Int,
+    val humidity: Int? = null,
     @SerializedName("pressure")
-    val pressure: Int,
+    val pressure: Int? = null,
     @SerializedName("temp")
-    val temp: Double,
+    val temp: Double? = null,
     @SerializedName("temp_max")
-    val tempMax: Double,
+    val tempMax: Double? = null,
     @SerializedName("temp_min")
-    val tempMin: Double
+    val tempMin: Double? = null
 )
 
 data class DataCurrentSys(
     @SerializedName("country")
-    val country: String,
+    val country: String? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("message")
-    val message: Double,
+    val message: Double? = null,
     @SerializedName("sunrise")
-    val sunrise: Int,
+    val sunrise: Int? = null,
     @SerializedName("sunset")
-    val sunset: Int,
+    val sunset: Int? = null,
     @SerializedName("type")
-    val type: Int
+    val type: Int? = null
 )
 
 data class DataCurrentWeatherList(
     @SerializedName("description")
-    val description: String,
+    val description: String? = null,
     @SerializedName("icon")
-    val icon: String,
+    val icon: String? = null,
     @SerializedName("id")
-    val id: Int,
+    val id: Int? = null,
     @SerializedName("main")
-    val main: String
+    val main: String? = null
 )
 
 data class DataCurrentWind(
     @SerializedName("deg")
-    val deg: Int,
+    val deg: Int? = null,
     @SerializedName("speed")
-    val speed: Double
+    val speed: Double? = null
 )
