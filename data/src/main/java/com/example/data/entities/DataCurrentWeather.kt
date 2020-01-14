@@ -1,11 +1,18 @@
 package com.example.data.entities
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import androidx.room.RoomMasterTable.TABLE_NAME
 import com.google.gson.annotations.SerializedName
 
 data class DataCurrentWeather(
     @SerializedName("payload") val payload: List<DataCurrentWeatherPayload>? = null
 )
 
+@Entity(tableName = TABLE_NAME)
 data class DataCurrentWeatherPayload(
+    @PrimaryKey(autoGenerate = true)
+    private var primaryKey: Int,
+
     @SerializedName("base")
     val base: String? = null,
     @SerializedName("clouds")
