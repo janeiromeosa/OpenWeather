@@ -43,4 +43,22 @@ dependencies {
 
     implementation project(":domain")
     implementation project(":data")
+
+    //Rxjava
+    implementation supportDependencies.rxJava2
+
+
+    //Gson
+    implementation supportDependencies.gson
+
+    //Retrofit
+    implementation supportDependencies.retrofit
+    implementation supportDependencies.retrofitConverter
+    implementation supportDependencies.retrofitRxJava2Adapter
+
+    //Koin
+    implementation supportDependencies.koin
+
+
+
 }

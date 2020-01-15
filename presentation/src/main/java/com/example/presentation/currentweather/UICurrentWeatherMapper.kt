@@ -1,8 +1,7 @@
-package com.example.presentation
+package com.example.presentation.currentweather
 
 import com.example.domain.common.Mapper
 import com.example.domain.weather.*
-import com.example.presentation.currentweather.*
 
 class UIWeatherMapper : Mapper<DomainCurrentWeather, UICurrentWeather> {
 
