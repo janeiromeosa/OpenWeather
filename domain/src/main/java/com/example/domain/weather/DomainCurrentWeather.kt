@@ -1,60 +1,60 @@
 package com.example.domain.weather
 
 data class DomainCurrentWeather(
-    val payload: List<DomainCurrentWeatherPayload>? = null
+    val payload: List<DomainCurrentWeatherPayload> = emptyList()
 )
 
 data class DomainCurrentWeatherPayload(
-    val base: String? = null,
-    val clouds: DomainCurrentClouds? = null,
-    val cod: Int? = null,
-    val coord: DomainCurrentCoord? = null,
-    val dt: Int? = null,
-    val id: Int? = null,
-    val main: DomainCurrentMain? = null,
-    val name: String? = null,
-    val sys: DomainCurrentSys? = null,
-    val timezone: Int? = null,
-    val visibility: Int? = null,
-    val weather: List<DomainCurrentWeatherList>? = null,
-    val wind: DomainCurrentWind? = null
+    val base: String = "",
+    val clouds: DomainCurrentClouds = DomainCurrentClouds(),
+    val cod: Int = Int.MIN_VALUE,
+    val coord: DomainCurrentCoord = DomainCurrentCoord(),
+    val dt: Int = Int.MIN_VALUE,
+    val id: Int = Int.MIN_VALUE,
+    val main: DomainCurrentMain = DomainCurrentMain(),
+    val name: String = "",
+    val sys: DomainCurrentSys = DomainCurrentSys(),
+    val timezone: Int = Int.MIN_VALUE,
+    val visibility: Int = Int.MIN_VALUE,
+    val weather: List<DomainCurrentWeatherList> = emptyList(),
+    val wind: DomainCurrentWind = DomainCurrentWind()
 )
 
 data class DomainCurrentClouds(
-    val all: Int? = null
+    val all: Int = Int.MIN_VALUE
 )
 
 data class DomainCurrentCoord(
-    val lat: Double? = null,
-    val lon: Double? = null
+    val lat: Double = Double.MIN_VALUE,
+    val lon: Double = Double.MIN_VALUE
 )
 
 data class DomainCurrentMain(
-    val feelsLike: Double? = null,
-    val humidity: Int? = null,
-    val pressure: Int? = null,
-    val temp: Double? = null,
-    val tempMax: Double? = null,
-    val tempMin: Double? = null
+    val feelsLike: Double = Double.MIN_VALUE,
+    val humidity: Int = Int.MIN_VALUE,
+    val pressure: Int = Int.MIN_VALUE,
+    val temp: Double = Double.MIN_VALUE,
+    val tempMax: Double = Double.MIN_VALUE,
+    val tempMin: Double = Double.MIN_VALUE
 )
 
 data class DomainCurrentSys(
-    val country: String? = null,
-    val id: Int? = null,
-    val message: Double? = null,
-    val sunrise: Int? = null,
-    val sunset: Int? = null,
-    val type: Int? = null
+    val country: String = "",
+    val id: Int = Int.MIN_VALUE,
+    val message: Double = Double.MIN_VALUE,
+    val sunrise: Int = Int.MIN_VALUE,
+    val sunset: Int = Int.MIN_VALUE,
+    val type: Int = Int.MIN_VALUE
 )
 
 data class DomainCurrentWeatherList(
-    val description: String? = null,
-    val icon: String? = null,
-    val id: Int? = null,
-    val main: String? = null
+    val description: String = "",
+    val icon: String = "",
+    val id: Int = Int.MIN_VALUE,
+    val main: String = ""
 )
 
 data class DomainCurrentWind(
-    val deg: Int? = null,
-    val speed: Double? = null
+    val deg: Int = Int.MIN_VALUE,
+    val speed: Double = Double.MIN_VALUE
 )

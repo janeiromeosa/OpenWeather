@@ -1,10 +1,9 @@
 package com.example.data.repository
 
-import com.example.data.database.WeatherLocalDataStore
-import com.example.data.database.WeatherPersistence
+//import com.example.data.database.WeatherLocalDataStore
+//import com.example.data.database.WeatherPersistence
 import com.example.data.datastore.WeatherRemoteDataStore
 import com.example.data.entities.DataCurrentWeather
-import com.example.data.mappers.WeatherMapper
 import com.example.domain.common.Mapper
 import com.example.domain.weather.DomainCurrentWeather
 import com.example.domain.weather.WeatherRepository
@@ -12,7 +11,7 @@ import io.reactivex.Single
 
 class WeatherRepositoryImpl(
     private val remote: WeatherRemoteDataStore,
-    private val local: WeatherLocalDataStore,
+//    private val local: WeatherLocalDataStore,
     private val weatherMapper: Mapper<DataCurrentWeather, DomainCurrentWeather>
 ): WeatherRepository, WeatherRepository.Persistence{
 

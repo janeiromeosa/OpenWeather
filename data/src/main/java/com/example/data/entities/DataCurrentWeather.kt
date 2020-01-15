@@ -8,10 +8,10 @@ data class DataCurrentWeather(
     @SerializedName("payload") val payload: List<DataCurrentWeatherPayload>? = null
 )
 
-@Entity(tableName = TABLE_NAME)
+//@Entity(tableName = TABLE_NAME)
 data class DataCurrentWeatherPayload(
-    @PrimaryKey(autoGenerate = true)
-    private var primaryKey: Int,
+//    @PrimaryKey(autoGenerate = true)
+//    private var primaryKey: Int,
 
     @SerializedName("base")
     val base: String? = null,
