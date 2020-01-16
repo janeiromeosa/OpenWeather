@@ -1,60 +1,61 @@
 package com.example.presentation.currentweather
 
-data class UICurrentWeather (
-        val payload: List<UICurrentWeatherPayload>
-    )
+data class UICurrentWeather(
+    val payload: List<UICurrentWeatherPayload>? = null
+)
 
-    data class UICurrentWeatherPayload(
-        val base: String,
-        val clouds: UICurrentClouds,
-        val cod: Int,
-        val coord: UICurrentCoord,
-        val dt: Int,
-        val id: Int,
-        val main: UICurrentMain,
-        val name: String,
-        val sys: UICurrentSys,
-        val timezone: Int,
-        val visibility: Int,
-        val weather: List<UICurrentWeatherList>,
-        val wind: UICurrentWind
-    )
+data class UICurrentWeatherPayload(
 
-    data class UICurrentClouds(
-        val all: Int
-    )
+    val base: String? = null,
+    val clouds: UICurrentClouds? = null,
+    val cod: Int? = null,
+    val coord: UICurrentCoord? = null,
+    val dt: Int? = null,
+    val id: Int? = null,
+    val main: UICurrentMain? = null,
+    val name: String? = null,
+    val sys: UICurrentSys? = null,
+    val timezone: Int? = null,
+    val visibility: Int? = null,
+    val weather: List<UICurrentWeatherList>? = null,
+    val wind: UICurrentWind? = null
+)
 
-    data class UICurrentCoord(
-        val lat: Double,
-        val lon: Double
-    )
+data class UICurrentClouds(
+    val all: Int? = null
+)
 
-    data class UICurrentMain(
-        val feelsLike: Double,
-        val humidity: Int,
-        val pressure: Int,
-        val temp: Double,
-        val tempMax: Double,
-        val tempMin: Double
-    )
+data class UICurrentCoord(
+    val lat: Double? = null,
+    val lon: Double? = null
+)
 
-    data class UICurrentSys(
-        val country: String,
-        val id: Int,
-        val message: Double,
-        val sunrise: Int,
-        val sunset: Int,
-        val type: Int
-    )
+data class UICurrentMain(
+    val feelsLike: Double? = null,
+    val humidity: Int? = null,
+    val pressure: Int? = null,
+    val temp: Double? = null,
+    val tempMax: Double? = null,
+    val tempMin: Double? = null
+)
 
-    data class UICurrentWeatherList(
-        val description: String,
-        val icon: String,
-        val id: Int,
-        val main: String
-    )
+data class UICurrentSys(
+    val country: String? = null,
+    val id: Int? = null,
+    val message: Double? = null,
+    val sunrise: Int? = null,
+    val sunset: Int? = null,
+    val type: Int? = null
+)
 
-    data class UICurrentWind(
-        val deg: Int,
-        val speed: Double
-    )
+data class UICurrentWeatherList(
+    val description: String? = null,
+    val icon: String? = null,
+    val id: Int? = null,
+    val main: String? = null
+)
+
+data class UICurrentWind(
+    val deg: Int? = null,
+    val speed: Double? = null
+)

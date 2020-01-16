@@ -1,12 +1,13 @@
 package com.example.presentation.currentweather
 
+import com.example.data.entities.*
 import com.example.domain.common.Mapper
 import com.example.domain.weather.*
 
-class UIWeatherMapper : Mapper<DomainCurrentWeather, UICurrentWeather> {
+class UICurrentWeatherMapper : Mapper<DomainCurrentWeather, UICurrentWeather> {
 
     override fun map(from: DomainCurrentWeather): UICurrentWeather = UICurrentWeather(
-        payload = from.payload.map { toDomainServicesPayload(it)  }
+        payload = from.payload?.map { toDomainServicesPayload(it)  }
     )
 
     private fun toDomainServicesPayload(it: DomainCurrentWeatherPayload): UICurrentWeatherPayload = UICurrentWeatherPayload (
@@ -21,7 +22,7 @@ class UIWeatherMapper : Mapper<DomainCurrentWeather, UICurrentWeather> {
         sys = toUISys(it.sys),
         timezone = it.timezone,
         visibility = it.visibility,
-        weather = it.weather.map{toUIWeather(it)},
+        weather = it.weather?.map{toUIWeather(it)},
         wind = toUIWind(it.wind)
     )
 
@@ -32,36 +33,36 @@ class UIWeatherMapper : Mapper<DomainCurrentWeather, UICurrentWeather> {
         main = it.main
     )
 
-    private fun toUIWind(wind: DomainCurrentWind): UICurrentWind = UICurrentWind(
-        deg = wind.deg,
-        speed =  wind.speed
+    private fun toUIWind(wind: DomainCurrentWind?): UICurrentWind? = UICurrentWind(
+        deg = wind?.deg,
+        speed =  wind?.speed
     )
 
-    private fun toUISys(sys: DomainCurrentSys): UICurrentSys = UICurrentSys(
-        country = sys.country,
-        id = sys.id,
-        message = sys.message,
-        sunrise = sys.sunrise,
-        sunset = sys.sunset,
-        type = sys.type
+    private fun toUISys(sys: DomainCurrentSys?): UICurrentSys? = UICurrentSys(
+        country = sys?.country,
+        id = sys?.id,
+        message = sys?.message,
+        sunrise = sys?.sunrise,
+        sunset = sys?.sunset,
+        type = sys?.type
     )
 
-    private fun toUIServicesMain(main: DomainCurrentMain): UICurrentMain = UICurrentMain(
-        feelsLike = main.feelsLike,
-        humidity = main.humidity,
-        pressure = main.pressure,
-        temp = main.temp,
-        tempMax = main.tempMax,
-        tempMin = main.tempMin
+    private fun toUIServicesMain(main: DomainCurrentMain?): UICurrentMain? = UICurrentMain(
+        feelsLike = main?.feelsLike,
+        humidity = main?.humidity,
+        pressure = main?.pressure,
+        temp = main?.temp,
+        tempMax = main?.tempMax,
+        tempMin = main?.tempMin
     )
 
-    private fun toUIServicesCoord(coord: DomainCurrentCoord): UICurrentCoord = UICurrentCoord(
-        lat = coord.lat,
-        lon = coord.lon
+    private fun toUIServicesCoord(coord: DomainCurrentCoord?): UICurrentCoord? = UICurrentCoord(
+        lat = coord?.lat,
+        lon = coord?.lon
     )
 
-    private fun toUIServicesClouds(clouds: DomainCurrentClouds): UICurrentClouds = UICurrentClouds(
-        all = clouds.all
+    private fun toUIServicesClouds(clouds: DomainCurrentClouds?): UICurrentClouds = UICurrentClouds(
+        all = clouds?.all
     )
 
 
