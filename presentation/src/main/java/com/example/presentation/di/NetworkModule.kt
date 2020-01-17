@@ -19,7 +19,6 @@ val networkModules = module {
     single(name = RETROFIT_INSTANCE) { createNetworkClient(ENDPOINT) }
     single {(get(RETROFIT_INSTANCE) as Retrofit).create(WeatherApi::class.java) }
     single{ Gson() }
-    single<ThreadScheduler>{ RxScheduler() }
 }
 
 fun createNetworkClient(baseUrl: String) =

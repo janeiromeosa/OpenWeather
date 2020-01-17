@@ -7,7 +7,7 @@ import com.example.domain.weather.*
 class WeatherMapper : Mapper<DataCurrentWeather, DomainCurrentWeather> {
     
     override fun map(from: DataCurrentWeather): DomainCurrentWeather = DomainCurrentWeather(
-        payload = from.payload?.map { toDataServicesPayload(it)  }
+        payload = from.payload?.map { toDataServicesPayload(it)  }?: emptyList()
     )
 
     private fun toDataServicesPayload(it: DataCurrentWeatherPayload): DomainCurrentWeatherPayload = DomainCurrentWeatherPayload (

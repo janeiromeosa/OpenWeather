@@ -20,7 +20,8 @@ class App : Application() {
                 repositoryModules,
                 useCaseModules,
                 mappers,
-                dataStoreModules
+                dataStoreModules,
+                schedulerModule
             ),
             logger = AndroidLogger()
         )

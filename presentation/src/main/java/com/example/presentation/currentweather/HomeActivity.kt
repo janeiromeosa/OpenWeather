@@ -1,6 +1,7 @@
 package com.example.presentation.currentweather
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.example.presentation.R
@@ -18,6 +19,9 @@ class HomeActivity : AppCompatActivity(){
 
         currentWeatherViewModel.getContentObservable().observe(this, Observer {
             tv_temperature.text = it.payload?.get(0)?.weather?.get(0)?.description ?: ""
+        })
+        currentWeatherViewModel.getErrorObserable().observe(this, Observer {
+            Toast.makeText(this,it, Toast.LENGTH_LONG).show()
         })
     }
 
