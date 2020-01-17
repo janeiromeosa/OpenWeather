@@ -16,13 +16,14 @@ class HomeActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        currentWeatherViewModel.getContentObservable().observe(this, Observer {
+            tv_temperature.text = it.payload?.get(0)?.weather?.get(0)?.description ?: ""
+        })
     }
 
     override fun onStart() {
         super.onStart()
-        currentWeatherViewModel.getContentObservable().observe(this, Observer {
-            tv_temperature.text = it.payload?.get(0)?.weather?.get(0)?.description ?: ""
-        })
+
         currentWeatherViewModel.getWeatherInfo()
     }
 }

@@ -1,7 +1,10 @@
 package com.example.presentation.di
 
 import com.example.data.api.WeatherApi
+import com.example.domain.common.ThreadScheduler
+import com.example.presentation.common.extentions.RxScheduler
 import com.google.gson.Gson
+import io.reactivex.Scheduler
 import okhttp3.OkHttpClient
 import org.koin.dsl.module.module
 import retrofit2.Retrofit
@@ -16,6 +19,7 @@ val networkModules = module {
     single(name = RETROFIT_INSTANCE) { createNetworkClient(ENDPOINT) }
     single {(get(RETROFIT_INSTANCE) as Retrofit).create(WeatherApi::class.java) }
     single{ Gson() }
+    single<ThreadScheduler>{ RxScheduler() }
 }
 
 fun createNetworkClient(baseUrl: String) =

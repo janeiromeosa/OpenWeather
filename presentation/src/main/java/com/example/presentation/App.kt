@@ -19,7 +19,8 @@ class App : Application() {
                 viewModels,
                 repositoryModules,
                 useCaseModules,
-                mappers
+                mappers,
+                dataStoreModules
             ),
             logger = AndroidLogger()
         )
