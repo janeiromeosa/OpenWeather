@@ -1,10 +1,6 @@
 package com.example.domain.weather
 
 data class DomainCurrentWeather(
-   val payload: List<DomainCurrentWeatherPayload>? = null
-)
-
-data class DomainCurrentWeatherPayload(
     
     val base: String? = null,
     val clouds: DomainCurrentClouds? = null,

@@ -4,12 +4,8 @@ import androidx.room.PrimaryKey
 import androidx.room.RoomMasterTable.TABLE_NAME
 import com.google.gson.annotations.SerializedName
 
-data class DataCurrentWeather(
-    @SerializedName("payload") val payload: List<DataCurrentWeatherPayload>? = null
-)
-
 //@Entity(tableName = TABLE_NAME)
-data class DataCurrentWeatherPayload(
+data class DataCurrentWeather(
 //    @PrimaryKey(autoGenerate = true)
 //    private var primaryKey: Int,
 

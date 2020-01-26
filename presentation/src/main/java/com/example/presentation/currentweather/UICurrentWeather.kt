@@ -1,10 +1,6 @@
 package com.example.presentation.currentweather
 
 data class UICurrentWeather(
-    val payload: List<UICurrentWeatherPayload>? = null
-)
-
-data class UICurrentWeatherPayload(
 
     val base: String? = null,
     val clouds: UICurrentClouds? = null,

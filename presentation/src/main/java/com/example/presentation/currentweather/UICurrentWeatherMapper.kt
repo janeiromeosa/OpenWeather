@@ -7,23 +7,19 @@ import com.example.domain.weather.*
 class UICurrentWeatherMapper : Mapper<DomainCurrentWeather, UICurrentWeather> {
 
     override fun map(from: DomainCurrentWeather): UICurrentWeather = UICurrentWeather(
-        payload = from.payload?.map { toDomainServicesPayload(it)  }
-    )
-
-    private fun toDomainServicesPayload(it: DomainCurrentWeatherPayload): UICurrentWeatherPayload = UICurrentWeatherPayload (
-        base = it.base,
-        clouds = toUIServicesClouds(it.clouds),
-        cod = it.cod,
-        coord = toUIServicesCoord(it.coord),
-        dt = it.dt,
-        id = it.id,
-        main = toUIServicesMain(it.main),
-        name = it.name,
-        sys = toUISys(it.sys),
-        timezone = it.timezone,
-        visibility = it.visibility,
-        weather = it.weather?.map{toUIWeather(it)},
-        wind = toUIWind(it.wind)
+        base = from.base,
+        clouds = toUIServicesClouds(from.clouds),
+        cod = from.cod,
+        coord = toUIServicesCoord(from.coord),
+        dt = from.dt,
+        id = from.id,
+        main = toUIServicesMain(from.main),
+        name = from.name,
+        sys = toUISys(from.sys),
+        timezone = from.timezone,
+        visibility = from.visibility,
+        weather = from.weather?.map{toUIWeather(it)},
+        wind = toUIWind(from.wind)
     )
 
     private fun toUIWeather(it: DomainCurrentWeatherList): UICurrentWeatherList = UICurrentWeatherList(

@@ -6,24 +6,25 @@ import com.example.domain.weather.*
 
 class WeatherMapper : Mapper<DataCurrentWeather, DomainCurrentWeather> {
     
-    override fun map(from: DataCurrentWeather): DomainCurrentWeather = DomainCurrentWeather(
-        payload = from.payload?.map { toDataServicesPayload(it)  }?: emptyList()
-    )
 
-    private fun toDataServicesPayload(it: DataCurrentWeatherPayload): DomainCurrentWeatherPayload = DomainCurrentWeatherPayload (
-        base = it.base,
-        clouds = toDomainServicesClouds(it.clouds),
-        cod = it.cod,
-        coord = toDomainServicesCoord(it.coord),
-        dt = it.dt,
-        id = it.id,
-        main = toDomainServicesMain(it.main),
-        name = it.name,
-        sys = toDomainSys(it.sys),
-        timezone = it.timezone,
-        visibility = it.visibility,
-        weather = it.weather?.map{toDomainWeather(it)},
-        wind = toDomainWind(it.wind)
+//    override fun map(from: DataCurrentWeather): DomainCurrentWeather = DomainCurrentWeather(
+//        payload = from.payload?.map { toDataServicesPayload(it)  }?: emptyList()
+//    )
+
+    override fun map(from: DataCurrentWeather): DomainCurrentWeather = DomainCurrentWeather (
+        base = from.base,
+        clouds = toDomainServicesClouds(from.clouds),
+        cod = from.cod,
+        coord = toDomainServicesCoord(from.coord),
+        dt = from.dt,
+        id = from.id,
+        main = toDomainServicesMain(from.main),
+        name = from.name,
+        sys = toDomainSys(from.sys),
+        timezone = from.timezone,
+        visibility = from.visibility,
+        weather = from.weather?.map{toDomainWeather(it)},
+        wind = toDomainWind(from.wind)
     )
 
     private fun toDomainWeather(it: DataCurrentWeatherList): DomainCurrentWeatherList = DomainCurrentWeatherList(

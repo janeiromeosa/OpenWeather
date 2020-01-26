@@ -21,9 +21,11 @@ class CurrentWeatherViewModel(
         currentWeatherUseCase.execute()
             .map { mapper.map(it) }
             .doOnSubscribe { loadingLiveData.value = true }
+            .doOnEvent { _, _ -> loadingLiveData.value = false }
             .subscribe(
-                {contentLiveData.value = it},
-                {errorLiveData.value = it.localizedMessage})
+//                {if (it.payload?.isEmpty() == true){
+                { contentLiveData.value = it },
+                { errorLiveData.value = it.localizedMessage})
         .addTo(compositeDisposable)
     }
 

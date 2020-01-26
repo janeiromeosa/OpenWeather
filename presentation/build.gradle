@@ -55,6 +55,8 @@ dependencies {
     implementation supportDependencies.retrofit
     implementation supportDependencies.retrofitConverter
     implementation supportDependencies.retrofitRxJava2Adapter
+    implementation supportDependencies.okhttp
+
 
     //Koin
     implementation supportDependencies.koin
